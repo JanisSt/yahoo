@@ -1,5 +1,7 @@
-<html>
+<html lang="en">
+
 <body>
+
 <form action="/add" method="get">
     <label for="name">Search</label>
     <input type="text" id="name" name="name" required>
@@ -10,12 +12,12 @@
 
     <?php
 
-    foreach ($stocks as $stock): ?>
+    if ($stock): ?>
 
-        <?php ?>
-       Name: <?php echo $stock->getName() ?><br>
+    <?php ?>
+    Name: <?php echo $stock->getName() ?><br>
     <p>
-       Previous Close: <?php echo $stock->getClose() ?><br>
+        Previous Close: <?php echo $stock->getClose() ?><br>
         Open: <?php echo $stock->getOpen() ?><br>
         Bid: <?php echo $stock->getBid() ?><br>
         Ask: <?php echo $stock->getAsk() ?><br>
@@ -24,8 +26,7 @@
         Volume: <?php echo $stock->getVolume() ?><br>
         Avg. Volume: <?php echo $stock->getAvgVolume() ?><br>
         Created at: <?php echo $stock->getCreatedAt(); ?><br>
-    <?php endforeach; ?>
+        <?php endif; ?>
 </table>
 </body>
 </html>
-
